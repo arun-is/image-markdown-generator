@@ -21,6 +21,10 @@
   "homepage": "https://github.com/arun-is/image-markdown-generator#readme",
   "devDependencies": {
     "@babel/cli": "^7.5.0",
-    "@babel/core": "^7.5.0"
+    "@babel/core": "^7.5.0",
+    "exif-async": "^1.0.6"
+  },
+  "dependencies": {
+    "fast-exif": "^1.0.1"
   }
 }
