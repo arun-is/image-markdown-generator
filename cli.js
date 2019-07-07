@@ -25,7 +25,7 @@ const run = async () => {
 
     const imageString = `![](${fileName}) <span class="f5 db tr o-40">Leica Q · f/${
       m.exif.FNumber
-    } · ${shutterSpeed} · ISO ${m.exif.ISO}</span>\n\n`
+    } · ${shutterSpeed} · ISO ${m.exif.ISO}</span>\n\n<br><br>\n\n`
 
     console.log(imageString)
   })
