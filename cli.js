@@ -23,7 +23,7 @@ const run = async () => {
     const m = await getExif(path.join(directory, fileName), true)
     const shutterSpeed = exposureTimeToHuman(m.exif.ExposureTime)
 
-    const imageString = `![](${fileName}) <span class="f5 db tr o-40">Leica Q · f/${
+    const imageString = `![](${fileName}) <span class="f5 db tr o-40 nb3">Leica Q · f/${
       m.exif.FNumber
     } · ${shutterSpeed} · ISO ${m.exif.ISO}</span>\n\n<br><br>\n\n`
 
