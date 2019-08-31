@@ -19,13 +19,11 @@ const run = async () => {
 
   const files = await readdirAsync(directory)
 
-  await files.forEach(async fileName => {
+  await files.sort().forEach(async fileName => {
     const m = await getExif(path.join(directory, fileName), true)
     const shutterSpeed = exposureTimeToHuman(m.exif.ExposureTime)
 
-    const imageString = `![](${fileName}) <span class="f5 db tr o-40 nb3">Leica Q · f/${
-      m.exif.FNumber
-    } · ${shutterSpeed} · ISO ${m.exif.ISO}</span>\n\n<br><br>\n\n`
+    const imageString = `![](${fileName}) <span class="f5 db tr o-40 nb3">Leica Q · f/${m.exif.FNumber} · ${shutterSpeed} · ISO ${m.exif.ISO}</span>\n\n<br><br>\n\n`
 
     console.log(imageString)
   })
