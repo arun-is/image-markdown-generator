@@ -18,11 +18,11 @@ const run = async () => {
   const directory = args[0]
 
   const files = await readdirAsync(directory)
+  const filtered = files.filter(fileName => fileName !== ".DS_Store")
 
   const markdownStrings = {}
 
-  const promises = await files.map(async fileName => {
-    if (fileName === ".DS_Store") return
+  const promises = await filtered.map(async fileName => {
     let m
     try {
       m = await getExif(path.join(directory, fileName), true)
@@ -40,7 +40,7 @@ const run = async () => {
 
   await Promise.all(promises)
 
-  files.forEach(fileName => console.log(markdownStrings[fileName]))
+  filtered.forEach(fileName => console.log(markdownStrings[fileName]))
 }
 
 run()
