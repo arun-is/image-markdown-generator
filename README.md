@@ -1,6 +1,6 @@
 # image-markdown-generator
 
-Arun Venkatesan uses this tool at arun.is.
+Arun Venkatesan uses this tool at [arun.is](arun.is).
 
 It takes a folder full of images, reads their exif data and outputs a code that can be copied into a markdown editor. The code includes embedding the image and also a caption listing out the camera settings used.
 
