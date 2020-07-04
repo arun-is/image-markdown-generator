@@ -31,7 +31,7 @@ const run = async () => {
     }
     const shutterSpeed = exposureTimeToHuman(m.exif.ExposureTime)
 
-    const imageString = `![](${fileName}) <span class="md-caption">Leica Q · f/${m.exif.FNumber} · ${shutterSpeed} · ISO ${m.exif.ISO}</span>\n\n<br><br>\n\n`
+    const imageString = `![](${fileName}) <span class="md-caption">Leica Q · f/${m.exif.FNumber} · ${shutterSpeed} · ISO ${m.exif.ISO}</span>\n\n`
 
     markdownStrings[fileName] = imageString
 
