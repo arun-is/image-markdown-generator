@@ -18,11 +18,11 @@ const run = async () => {
   const directory = args[0]
 
   const files = await readdirAsync(directory)
-  const filtered = files.filter(fileName => fileName !== ".DS_Store")
+  const filtered = files.filter((fileName) => fileName !== ".DS_Store")
 
   const markdownStrings = {}
 
-  const promises = await filtered.map(async fileName => {
+  const promises = await filtered.map(async (fileName) => {
     let m
     try {
       m = await getExif(path.join(directory, fileName), true)
@@ -31,7 +31,7 @@ const run = async () => {
     }
     const shutterSpeed = exposureTimeToHuman(m.exif.ExposureTime)
 
-    const imageString = `![](${fileName}) <span class="f5 db tr o-40 nb3">Leica Q · f/${m.exif.FNumber} · ${shutterSpeed} · ISO ${m.exif.ISO}</span>\n\n<br><br>\n\n`
+    const imageString = `![](${fileName}) <span class="md-caption">Leica Q · f/${m.exif.FNumber} · ${shutterSpeed} · ISO ${m.exif.ISO}</span>\n\n<br><br>\n\n`
 
     markdownStrings[fileName] = imageString
 
@@ -40,7 +40,7 @@ const run = async () => {
 
   await Promise.all(promises)
 
-  filtered.forEach(fileName => console.log(markdownStrings[fileName]))
+  filtered.forEach((fileName) => console.log(markdownStrings[fileName]))
 }
 
 run()
