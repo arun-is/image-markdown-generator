@@ -33,9 +33,10 @@ const run = async () => {
     } catch (e) {
       console.error(`problem with ${fileName}`)
     }
-    const shutterSpeed = exposureTimeToHuman(m.exif.ExposureTime)
+    const exif = m.exif
+    const shutterSpeed = exposureTimeToHuman(exif.ExposureTime)
     const cameraModel = cameraModelMap[m.image.Model] || m.image.Model
-    const imageString = `![](${fileName}) <span class="md-caption">${cameraModel} · f/${m.exif.FNumber} · ${shutterSpeed} · ISO ${m.exif.ISO}</span>\n\n`
+    const imageString = `![](${fileName}) <span class="md-caption">${cameraModel} · ${exif.FocalLengthIn35mmFormat}mm · f/${exif.FNumber} · ${shutterSpeed} · ISO ${exif.ISO}</span>\n\n`
 
     markdownStrings[fileName] = imageString
 
