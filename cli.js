@@ -7,10 +7,14 @@ const getExif = require("exif-async")
 const path = require("path")
 const readdirAsync = promisify(fs.readdir)
 
+const cameraModelMap = {
+  "LEICA Q (Typ 116)": "Leica Q"
+}
+
 const run = async () => {
   const args = process.argv.slice(2)
 
-  if (args.length !== 1) {
+  if (args.length < 1) {
     console.error("no path provided")
     return
   }
@@ -30,8 +34,8 @@ const run = async () => {
       console.error(`problem with ${fileName}`)
     }
     const shutterSpeed = exposureTimeToHuman(m.exif.ExposureTime)
-
-    const imageString = `![](${fileName}) <span class="md-caption">Leica Q · f/${m.exif.FNumber} · ${shutterSpeed} · ISO ${m.exif.ISO}</span>\n\n`
+    const cameraModel = cameraModelMap[m.image.Model] || m.image.Model
+    const imageString = `![](${fileName}) <span class="md-caption">${cameraModel} · f/${m.exif.FNumber} · ${shutterSpeed} · ISO ${m.exif.ISO}</span>\n\n`
 
     markdownStrings[fileName] = imageString
 
