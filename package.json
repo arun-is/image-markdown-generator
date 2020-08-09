@@ -20,8 +20,8 @@
   },
   "homepage": "https://github.com/arun-is/image-markdown-generator#readme",
   "devDependencies": {
-    "@babel/cli": "^7.5.0",
-    "@babel/core": "^7.5.0",
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.11.1",
     "exif-async": "^1.0.6"
   },
   "dependencies": {
