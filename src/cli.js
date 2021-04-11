@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const fs = require("fs")
-const { exposureTimeToHuman } = require("./converter.js")
+const { exposureTimeToHuman } = require("../converter.js")
 const { promisify } = require("util")
 const getExif = require("exif-async")
 const path = require("path")

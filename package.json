@@ -1,6 +1,6 @@
 {
   "name": "image-markdown-generator",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -16,12 +16,15 @@
     "url": "https://github.com/arun-is/image-markdown-generator/issues"
   },
   "bin": {
-    "imgmd": "babel cli.js"
+    "imgmd": "./lib/cli.js"
+  },
+  "scripts": {
+    "build": "babel src -d lib"
   },
   "homepage": "https://github.com/arun-is/image-markdown-generator#readme",
-  "dependencies": {
-    "@babel/cli": "^7.10.5",
-    "@babel/core": "^7.11.1",
+  "devDependencies": {
+    "@babel/cli": "^7.13.14",
+    "@babel/core": "^7.13.15",
     "exif-async": "^1.0.6"
   }
 }
