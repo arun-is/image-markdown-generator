@@ -19,12 +19,9 @@
     "imgmd": "babel cli.js"
   },
   "homepage": "https://github.com/arun-is/image-markdown-generator#readme",
-  "devDependencies": {
+  "dependencies": {
     "@babel/cli": "^7.10.5",
     "@babel/core": "^7.11.1",
     "exif-async": "^1.0.6"
-  },
-  "dependencies": {
-    "fast-exif": "^1.0.1"
   }
 }
