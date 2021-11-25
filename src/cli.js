@@ -8,7 +8,10 @@ const path = require("path")
 const readdirAsync = promisify(fs.readdir)
 
 const cameraModelMap = {
-  "LEICA Q (Typ 116)": "Leica Q"
+  "ILCE-7": "Sony a7",
+  "LEICA Q (Typ 116)": "Leica Q",
+  "Leica T (Typ 701)": "Leica T",
+  X100V: "Fujifilm X100V"
 }
 
 const run = async () => {
