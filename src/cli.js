@@ -11,6 +11,7 @@ const cameraModelMap = {
   "ILCE-7": "Sony a7",
   "LEICA Q (Typ 116)": "Leica Q",
   "Leica T (Typ 701)": "Leica T",
+  "LEICA CL": "Leica CL",
   X100V: "Fujifilm X100V"
 }
 
